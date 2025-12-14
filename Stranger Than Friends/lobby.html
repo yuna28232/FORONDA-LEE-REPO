@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<body>
-</body>
 <head>
-  <a href="#"><img src="will.png" class="icon will"></a>
-  <a href="#"><img src="tunes.png" class="icon tunes"></a>
-  <a href="#"><img src="mike.png" class="icon mike"></a>
+  <title> Stranger Than Friends</title>
 </head>
 <header>
-  <img src="assets/stftitle.png" class="logo">
+  <img src="assets2/stftitle.png" class="logo">
+  <div class="icons-lobby">
+    <a href="#"><img src="assets2/homee.png" class="icon-lobby" ></a>
+    <a href="#"><img src="assets2/mixtapes.png" class="icon-lobby" ></a>
+  <a href="#"><img src="assets2/past&pres.png" class="icon-lobby" ></a>
+  <a href="#"><img src="assets2/top picks.png" class="icon-lobby" ></a>
+  <a href="#"><img src="assets2/their lore.png" class="icon-lobby" ></a>
+  </div>
 </header>
-</header>
+
+<body>
+  <p> ipsum dolor sit amet consectetur adipisicing elit. Perferendis autem sed quae totam corporis! Enim ex assumenda, voluptatem magni pariatur dolorum, quibusdam doloribus id est reprehenderit nihil, eveniet nulla dicta! </p>
+</body>
 
 <style>
 html, body{
+    background-color: rgba(27, 33, 84, 1);
     height: 100%;
     margin: 0;
-    overflow: hidden;
+    overflow-y: auto;
 }
 body {
-    background-image: url(assets/Hahe.png);
+    background-image: url(assets2/Hahe.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -30,9 +37,74 @@ header {
   align-items: center;
   padding: 20px;  
   justify-content: space-between; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 
-header>img {
+.logo {
   width: 450px; 
 }
+
+.icons-lobby {
+  position: absolute;  
+  z-index: 10;    
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 10px;  
+            
+  transition: gap 0.3s ease;
+
+  bottom: -35px;
+
+  right: 40px;              
+}
+
+.icons-lobby a {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+.icon-lobby{
+  width: 205px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.icons-lobby:hover {
+  animation: bounce 0.6s infinite;
+  gap: 20px; 
+}
+
+.icons-lobby a:not(:first-child) {
+  margin-left: -45px;   
+}
+
+.icons-lobby a:nth-child(1) { z-index: 1; }
+.icons-lobby a:nth-child(2) { z-index: 2; }
+.icons-lobby a:nth-child(3) { z-index: 3; }
+.icons-lobby a:nth-child(4) { z-index: 4; }
+.icons-lobby a:nth-child(5) { z-index: 5; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+p{
+  margin: 30px;
+  padding-top: 120px;
+  color: cadetblue;
+}
+
 </style>
+
+
+
+

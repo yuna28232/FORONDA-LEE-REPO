@@ -4,14 +4,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <header>
-  <img src="assets2/other/stftitle.png" class="title">
-  <div class="icons-lobby">
-    <a href="lobby.html"><img src="assets2/nav-icons/homee.png" class="icon-lobby" ></a>
-    <a href="Mixtape.html"><img src="assets2/nav-icons/mixtapes.png" class="icon-lobby" ></a>
-  <a href="Past and Present.html"><img src="assets2/nav-icons/past&pres.png" class="icon-lobby" ></a>
-  <a href="topPicks.html"><img src="assets2/nav-icons/top picks.png" class="icon-lobby" ></a>
-  <a href="Lore.html"><img src="assets2/nav-icons/their lore.png" class="icon-lobby" ></a>
-  </div>
+  <div id="header"></div>
+
+<script>
+  fetch("handf.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
 </header>
 
 <div class="start">
@@ -55,10 +56,15 @@
   });
 </script>
 
-
-<footer> 
-Click here to see our references!
-</footer>
+<style>
+  body {
+    background-color: rgba(27, 33, 84, 1);
+    background-image: url(assets2/bgs/Hahe.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+</style>
 
 
 

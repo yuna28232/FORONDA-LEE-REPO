@@ -1,38 +1,33 @@
 <!DOCTYPE html>
-<body>
-</body>
 <head>
-  <a href="#"><img src="will.png" class="icon will"></a>
-  <a href="#"><img src="tunes.png" class="icon tunes"></a>
-  <a href="#"><img src="mike.png" class="icon mike"></a>
+  <title> Stranger Than Friends</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <header>
-  <img src="assets/stftitle.png" class="logo">
+<div id="header"></div>
+
+<script>
+  fetch("handf.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
 </header>
-</header>
+
+<body>
+  choose one...
+
+  <div class = "choose">
+     <a href="will.html"><img src="assets2/btns/will.png" class="icon-will" ></a>
+    <a href="mike.html"><img src="assets2/btns/mike.png" class="icon-mike" ></a>
+  </div>
+
+</body>
 
 <style>
-html, body{
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-}
 body {
-    background-image: url(assets/Hahe.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-header {
-  background-color: rgba(255, 226, 136, 0.7);
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 20px;  
-  justify-content: space-between; 
+    background-color: rgb(11, 19, 46);
 }
 
-header>img {
-  width: 450px; 
-}
 </style>

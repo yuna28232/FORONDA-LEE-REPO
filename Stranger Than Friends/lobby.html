@@ -1,109 +1,64 @@
 <!DOCTYPE html>
 <head>
   <title> Stranger Than Friends</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <header>
-  <img src="assets2/stftitle.png" class="logo">
+  <img src="assets2/other/stftitle.png" class="title">
   <div class="icons-lobby">
-    <a href="#"><img src="assets2/homee.png" class="icon-lobby" ></a>
-    <a href="#"><img src="assets2/mixtapes.png" class="icon-lobby" ></a>
-  <a href="#"><img src="assets2/past&pres.png" class="icon-lobby" ></a>
-  <a href="#"><img src="assets2/top picks.png" class="icon-lobby" ></a>
-  <a href="#"><img src="assets2/their lore.png" class="icon-lobby" ></a>
+    <a href="lobby.html"><img src="assets2/nav-icons/homee.png" class="icon-lobby" ></a>
+    <a href="Mixtape.html"><img src="assets2/nav-icons/mixtapes.png" class="icon-lobby" ></a>
+  <a href="Past and Present.html"><img src="assets2/nav-icons/past&pres.png" class="icon-lobby" ></a>
+  <a href="topPicks.html"><img src="assets2/nav-icons/top picks.png" class="icon-lobby" ></a>
+  <a href="Lore.html"><img src="assets2/nav-icons/their lore.png" class="icon-lobby" ></a>
   </div>
 </header>
 
+<div class="start">
+  <img src="assets2/other/blinkiesCafe-mw.gif" alt="hello, adventurer!" class="hello">
+</div>
+
 <body>
-  <p> ipsum dolor sit amet consectetur adipisicing elit. Perferendis autem sed quae totam corporis! Enim ex assumenda, voluptatem magni pariatur dolorum, quibusdam doloribus id est reprehenderit nihil, eveniet nulla dicta! </p>
+  <div id="musicToggle" class="music-btn">
+  <img
+    src="assets2/btns/playing.png"
+    data-play="assets2/btns/playing.png"
+    data-pause="assets2/btns/pause.png"
+    alt="Music toggle"
+    class="music-icon"
+  >
+  </div>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="assets2/music/David Bowie - Starman (HQ).mp3" type="audio/mpeg">
+</audio>
+
+  <p> Our website plans to share with you the nature of a specific theoretical couple pairing (also known as "Byler"), derived from a TV show titled "Stranger Things", through music and all of its elements: melody, lyrics, tempo, and even just first-hand vibes! Whether it be modern music that shares similar sentiments and heartfelt feelings of the characters, or songs that stay true to the show's timeline---hitting fans in their feels of nostalgia or immersion into the fictional universe, we are sure to handpick only the best of the best that will surely keep you hooked for more. We have been long time avid fans of the television show, as well as music geeks, which brought us to the notion to combine our interests into a project idea that would be bound to constantly fuel us with productivity and dedication in completing the project up until our last quarter.</p>
 </body>
 
-<style>
-html, body{
-    background-color: rgba(27, 33, 84, 1);
-    height: 100%;
-    margin: 0;
-    overflow-y: auto;
-}
-body {
-    background-image: url(assets2/Hahe.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-header {
-  background-color: rgba(255, 226, 136, 0.7);
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 20px;  
-  justify-content: space-between; 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-}
+<script>
+  const music = document.getElementById("bgMusic");
+  const button = document.getElementById("musicToggle");
+  const icon = button.querySelector(".music-icon");
 
-.logo {
-  width: 450px; 
-}
+  const playIcon = icon.dataset.play;
+  const pauseIcon = icon.dataset.pause;
 
-.icons-lobby {
-  position: absolute;  
-  z-index: 10;    
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  gap: 10px;  
-            
-  transition: gap 0.3s ease;
-
-  bottom: -35px;
-
-  right: 40px;              
-}
-
-.icons-lobby a {
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
+  button.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      icon.src = playIcon;
+    } else {
+      music.pause();
+      icon.src = pauseIcon;
+    }
+  });
+</script>
 
 
-.icon-lobby{
-  width: 205px;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.icons-lobby:hover {
-  animation: bounce 0.6s infinite;
-  gap: 20px; 
-}
-
-.icons-lobby a:not(:first-child) {
-  margin-left: -45px;   
-}
-
-.icons-lobby a:nth-child(1) { z-index: 1; }
-.icons-lobby a:nth-child(2) { z-index: 2; }
-.icons-lobby a:nth-child(3) { z-index: 3; }
-.icons-lobby a:nth-child(4) { z-index: 4; }
-.icons-lobby a:nth-child(5) { z-index: 5; }
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
-}
-
-p{
-  margin: 30px;
-  padding-top: 120px;
-  color: cadetblue;
-}
-
-</style>
+<footer> 
+Click here to see our references!
+</footer>
 
 
 

@@ -1,0 +1,126 @@
+html, body{
+    background-color: rgba(27, 33, 84, 1);
+    height: 100%;
+    margin: 0;
+    overflow-y: scroll;
+}
+body {
+    background-image: url(assets2/bgs/Hahe.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+header {
+  background-color: rgba(255, 226, 136, 0.7);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 20px;  
+  justify-content: space-between; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.title {
+  width: 450px; 
+}
+
+.icons-lobby {
+  position: absolute;  
+  z-index: 10;    
+  cursor: pointer;
+  display: flex;
+  justify-content: center; 
+  bottom: -35px;
+  right: 40px;  
+  gap: 20px;
+  transition: gap 0.35s ease;            
+}
+
+.icons-lobby:has(.icon-lobby:hover) {
+  gap: 30px;
+  transition: gap 0.3s ease;
+}
+
+.icons-lobby a {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.icon-lobby{
+  width: 205px;
+  height: auto;
+  display: block;
+  transition: transition 0.6s ease;
+}
+
+.icon-lobby:hover {
+  animation: bounce 0.6s infinite;
+}
+
+.icons-lobby a:not(:first-child) {
+  margin-left: -45px;   
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+p{
+  margin: 30px;
+  padding-top: 150px;
+  color: cadetblue;
+}
+
+.start > img {
+  padding-top: 120px;
+  display: block;
+  margin:  auto;
+  filter: brightness(0.9);
+}
+
+footer{
+  background-color: black;
+  color: #41ead4;
+  font-family: Consolas, Hack, "Liberation Mono", monospace;
+    background-image: url(assets2/bgs/purple-stars-bg.gif);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.7;
+    text-align: center 80px;
+    padding: 30px;
+     position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.music-btn {
+  display: block;
+  width: 200px;
+  height: auto;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  top: -90px;
+}
+
+.music-icon {
+  width: 200px;
+  height: auto;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.music-btn:hover .music-icon {
+  transform: scale(1.067);
+}
+
+
+

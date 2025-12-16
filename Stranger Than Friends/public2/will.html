@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <title> Stranger Than Friends</title>
+  <link rel="stylesheet" href="../css files/styles.css">
+  <link rel="stylesheet" href="../js files/will-musicplayer.js">
+</head>
+<header>
+<div id="header"></div>
+
+<script>
+  fetch("handf.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+
+    function togglePlayer() {
+  document.getElementById("player").classList.toggle("open");
+}
+</script>
+</header>
+
+<body>
+<div class="audio-player" id="player">
+  <button class="toggle" onclick="togglePlayer()">🎵</button>
+
+  <div class="player-content">
+    <p id="song-title">Select a song</p>
+
+    <audio id="audio" controls></audio>
+
+    <div class="song-list">
+      <button onclick="playSong('song1.mp3', 'Song One')">Song One</button>
+      <button onclick="playSong('song2.mp3', 'Song Two')">Song Two</button>
+      <button onclick="playSong('song3.mp3', 'Song Three')">Song Three</button>
+    </div>
+  </div>
+</div>
+</body>
+
+<style>
+
+</style>

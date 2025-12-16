@@ -54,6 +54,7 @@ html {
 body > p {
   color: #92d4f2;
   display: inline-block;
+  margin: auto;
   margin: -90px;
   margin-left: 20px;
   margin-right: 20px;
@@ -72,15 +73,17 @@ body > p {
 footer{
   background-color: black;
   color: #41ead4;
-    background-image: url(assets2/bgs/choose.png);
-    background-size: cover;
+  font-family: Consolas, Hack, "Liberation Mono", monospace;
+    background-image: url(../assets2/bgs/footer.gif);
+    background-size: auto;
     background-repeat: repeat;
     background-position: center;
     opacity: 0.7;
     text-align: center 80px;
     padding: 30px;
-     position: fixed;
+  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
 }
 
@@ -125,23 +128,79 @@ footer, body {
   z-index: 100;
 }
 
-footer{
-  background-color: black;
-  color: #41ead4;
-  font-family: Consolas, Hack, "Liberation Mono", monospace;
-    background-image: url(assets2/bgs/mixtape.gif);
-    background-size: auto;
-    background-repeat: repeat;
-    background-position: center;
-    opacity: 0.7;
-    text-align: center 80px;
-    padding: 30px;
+.audio-player {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  
+  width: 50px;               /* collapsed width */
+  height: 200px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px 0 0 12px;
+  
+  transition: width 0.3s ease;
+  overflow: hidden;
+  color: white;
+  z-index: 1000;
 }
 
+
+
+/* WILL'S MUSIC PLAYER */
+
+.audio-player.open {
+  width: 260px;
+}
+
+/* Toggle button */
+.toggle {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Content inside */
+.player-content {
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Show content only when open */
+.audio-player.open .player-content {
+  opacity: 1;
+}
+
+.song-title {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.song-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.song-list button {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.song-list button:hover {
+  background: #444;
+}
 
 
 

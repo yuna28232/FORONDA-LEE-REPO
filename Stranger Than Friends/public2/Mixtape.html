@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+  <title> Stranger Than Friends</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+<div id="header"></div>
+
+<script>
+  fetch("handf.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+</header>
+
+<body>
+  <img src="assets2/other/blinkiesCafe-Io.gif">
+
+  <div class = "choose">
+     <a href="will.html"><img src="assets2/btns/will.png" class="icon-will" ></a>
+    <a href="mike.html"><img src="assets2/btns/mike.png" class="icon-mike" ></a>
+  </div>
+
+  <p class="will-desc">my paintings speak thousands words that I could never say to you</p>
+  <p class="mike-desc">i write to remember you, hoping that you’ll never stop needing me</p>
+
+</body>
+
+<style>
+p{
+  font-size: small;
+}
+  .will-desc {
+    margin-left: 155px;
+    transform: translateY(-38px);
+  }
+
+  .mike-desc {
+    margin-left: 775px;
+    transform: translateY(-56px);
+  }
+body {
+  
+    background-color: rgba(27, 33, 84, 1);
+    background-image: url(assets2/bgs/Hahe.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body>img{
+  padding-top: 120px;
+  display: block;
+  margin:  auto;
+  width: 800px;
+  filter: brightness(0.9);
+}
+
+.icon-will {
+  filter: grayscale(0.3);
+  display: block;
+  margin-top: -50px;
+  width: 845px;
+  transition: 
+    transform 0.2s ease,
+    filter 0.2s ease;
+  padding: 0px;
+  border: none;
+}
+
+.icon-mike {
+  filter: brightness(1.067);
+  display: block;
+  margin-left: 640px;
+  margin-top: -460px;
+  width: 775px;
+  transition: 
+    transform 0.2s ease,
+    filter 0.2s ease;
+  padding: 0px;
+  border: none;
+}
+
+.icon-will:hover {
+    transform: scale(1.02);      
+  filter: grayscale(50%) sepia(70%) saturate(120%) brightness(80%);
+}
+
+.icon-mike:hover {
+    transform: scale(1.02);      
+  filter: grayscale(20%) sepia(50%) saturate(120%) brightness(80%);
+}
+
+</style>

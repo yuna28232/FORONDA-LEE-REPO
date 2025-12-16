@@ -1,4 +1,4 @@
-html, body{
+html {
     height: 100%;
     margin: 0;
     overflow-y: scroll;
@@ -51,24 +51,28 @@ html, body{
   50%      { transform: translateY(-8px); }
 }
 
-p{
-  margin: 30px;
-  padding-top: 150px;
-  color: cadetblue;
+body > p {
+  color: #92d4f2;
+  display: inline-block;
+  margin: -90px;
+  margin-left: 20px;
+  margin-right: 20px;
+  line-height: 1.6;
 }
 
 .start > img {
-  padding-top: 120px;
+  display: block;
+  width: 500px;
+ padding-top: 90px;
   display: block;
   margin:  auto;
-  filter: brightness(0.9);
+  filter: brightness(1.2);
 }
 
 footer{
   background-color: black;
   color: #41ead4;
-  font-family: Consolas, Hack, "Liberation Mono", monospace;
-    background-image: url(assets2/bgs/purple-stars-bg.gif);
+    background-image: url(assets2/bgs/choose.png);
     background-size: cover;
     background-repeat: repeat;
     background-position: center;
@@ -80,6 +84,10 @@ footer{
   width: 100%;
 }
 
+footer, body {
+  font-family: Consolas, Hack, "Liberation Mono", monospace;
+}
+
 .music-btn {
   display: block;
   width: 200px;
@@ -89,11 +97,12 @@ footer{
   border: none;
   cursor: pointer;
   padding: 8px;
-  top: -90px;
+  top: -250px;
+
 }
 
 .music-icon {
-  width: 200px;
+  width: 250px;
   height: auto;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
@@ -103,7 +112,7 @@ footer{
 }
 
 .site-header {
-  background-color: rgba(255, 226, 136, 0.7);
+  background-color: rgba(83, 72, 130, 0.633);
   height: 60px;
   display: flex;
   align-items: center;
@@ -120,15 +129,16 @@ footer{
   background-color: black;
   color: #41ead4;
   font-family: Consolas, Hack, "Liberation Mono", monospace;
-    background-image: url(assets2/bgs/purple-stars-bg.gif);
-    background-size: cover;
+    background-image: url(assets2/bgs/mixtape.gif);
+    background-size: auto;
     background-repeat: repeat;
     background-position: center;
     opacity: 0.7;
     text-align: center 80px;
     padding: 30px;
-     position: fixed;
+  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
 }
 

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stranger Than Friends</title>
+  <script src="../js-files/mike-musicplayer.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <div id="header"></div>
+</header>
+
+<script>
+  fetch("./handf.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+<div class="audio-player" id="player">
+  <button class="toggle" onclick="togglePlayer()">💙</button>
+
+  <div class="player-content">
+    <p id="song-title">Will's Mixtape</p>
+    <audio id="audio" controls></audio>
+
+    <div class="playlist-switch">
+      <button onclick="loadPlaylist('playlist1')">Retro</button>
+      <button onclick="loadPlaylist('playlist2')">Modern</button>
+    </div>
+
+    <!-- JS WILL INSERT SONGS HERE -->
+    <div class="song-list" id="songList"></div>
+  </div>
+</div>
+
+</body>
+
+<style>
+    body {
+      background-color: rgb(52, 27, 5);
+    background-image: url(../assets2/bgs/castlebyers.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center ;
+    }
+
+    /* ===== PLAYER CONTAINER ===== */
+    .audio-player {
+      font-family: 'Courier New', Courier, monospace;
+      position: fixed;
+      top: 370px; 
+      right: 0;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 420px;
+      background: linear-gradient(
+        180deg,
+        rgba(106, 191, 255, 0.95),
+        rgba(29, 84, 202, 0.95)
+      );
+      overflow: hidden;
+      transition: width 0.3s ease;
+      color: rgb(0, 0, 0);
+      z-index: 9999;
+    }
+
+    .audio-player.open {
+      width: 280px;
+    }
+
+    /* ===== TOGGLE ===== */
+    .toggle {
+      width: 50px;
+      height: 50px;
+      border: none;
+      background: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .player-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 12px;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .audio-player.open .player-content {
+      opacity: 1;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    .song-list {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-bottom: 70px;
+    }
+
+    .song-btn {
+      font-family: "Liberation Mono", monospace;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(126, 178, 246, 0.405);
+      border: none;
+      color: rgb(31, 31, 102);
+      padding: 8px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .song-btn img {
+      width: 42px;
+      height: 42px;
+      border-radius: 6px;
+    }
+.playlist-switch button {
+  background: rgb(157, 193, 255); 
+  border: none;
+  color: rgb(31, 31, 102);
+  font-family: "Liberation Mono", monospace;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+  </style>
+
+
+
+</html>

@@ -1,43 +1,156 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title> Stranger Than Friends</title>
-  <link rel="stylesheet" href="../css files/styles.css">
-  <link rel="stylesheet" href="../js files/will-musicplayer.js">
+  <title>Stranger Than Friends</title>
+  <script src="../js-files/will-musicplayer.js" defer></script>
 </head>
+
+<body>
+
 <header>
-<div id="header"></div>
+  <div id="header"></div>
+</header>
 
 <script>
-  fetch("handf.html")
+  fetch("./handf.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header").innerHTML = data;
     });
-
-    function togglePlayer() {
-  document.getElementById("player").classList.toggle("open");
-}
 </script>
-</header>
 
-<body>
 <div class="audio-player" id="player">
-  <button class="toggle" onclick="togglePlayer()">🎵</button>
+  <button class="toggle" onclick="togglePlayer()">💛</button>
 
   <div class="player-content">
-    <p id="song-title">Select a song</p>
-
+    <p id="song-title">Will's Mixtape</p>
     <audio id="audio" controls></audio>
 
-    <div class="song-list">
-      <button onclick="playSong('song1.mp3', 'Song One')">Song One</button>
-      <button onclick="playSong('song2.mp3', 'Song Two')">Song Two</button>
-      <button onclick="playSong('song3.mp3', 'Song Three')">Song Three</button>
+    <div class="playlist-switch">
+      <button onclick="loadPlaylist('playlist1')">Retro</button>
+      <button onclick="loadPlaylist('playlist2')">Modern</button>
     </div>
+
+    <!-- JS WILL INSERT SONGS HERE -->
+    <div class="song-list" id="songList"></div>
   </div>
 </div>
+
 </body>
 
 <style>
+    body {
+      background-color: rgb(52, 27, 5);
+    background-image: url(../assets2/bgs/castlebyers.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center ;
+    }
 
-</style>
+    /* ===== PLAYER CONTAINER ===== */
+    .audio-player {
+      font-family: 'Courier New', Courier, monospace;
+      position: fixed;
+      top: 370px; 
+      right: 0;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 420px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 206, 73, 0.95),
+        rgba(227, 140, 0, 0.95)
+      );
+      overflow: hidden;
+      transition: width 0.3s ease;
+      color: rgb(114, 53, 3);
+      z-index: 9999;
+    }
+
+    .audio-player.open {
+      width: 280px;
+    }
+
+    /* ===== TOGGLE ===== */
+    .toggle {
+      width: 50px;
+      height: 50px;
+      border: none;
+      background: none;
+      color: rgb(255, 255, 255);
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .player-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 12px;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .audio-player.open .player-content {
+      opacity: 1;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    .song-list {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-bottom: 70px;
+    }
+
+    .song-btn {
+      font-family: "Liberation Mono", monospace;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(234, 107, 9, 0.405);
+      border: none;
+      color: rgb(114, 53, 3);
+      padding: 8px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .song-btn img {
+      width: 42px;
+      height: 42px;
+      border-radius: 6px;
+    }
+
+    .playlist-switch button {
+  background: rgba(234, 107, 9, 0.405); 
+  border: none;
+  color: rgb(114, 53, 3);
+  font-family: "Liberation Mono", monospace;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+
+
+  </style>
+
+
+
+</html>
+
+
+  

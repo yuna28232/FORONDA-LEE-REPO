@@ -51,13 +51,14 @@ html {
   50%      { transform: translateY(-8px); }
 }
 
-body > p {
+body>p {
   color: #92d4f2;
   display: inline-block;
   margin: auto;
-  margin: -90px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: -450px;
+  text-align: justify;
+  margin-left: 50px;
+  margin-right: 50px;
   line-height: 1.6;
 }
 

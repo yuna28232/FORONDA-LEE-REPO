@@ -1,1 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stranger Than Friends</title>
+  <script src="../js-files/pnp-musicplayer.js" defer></script>
+</head>
+
+<div id="infoText" class="popup-text active">
+  <div class="popup-inner">
+    Using the music player to your right, toggle it by clicking on the rainbow icon, and select between Mike and Will's 'Miwi' (past) and 'Byler' (present) dynamic to begin!
+  </div>
+</div>
+
+
+<body>
+
+<header>
+  <div id="header"></div>
+</header>
+
+<script>
+  fetch("./handf.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+<div class="audio-player" id="player">
+  <button class="toggle" onclick="togglePlayer()">🌈</button>
+
+  <div class="player-content">
+    <p id="song-title">The Past and Present</p>
+    <audio id="audio" controls></audio>
+
+    <div class="playlist-switch">
+<button onclick="switchPlaylist('playlist1')">Miwi</button>
+<button onclick="switchPlaylist('playlist2')">Byler</button>
+</div>
+
+    <!-- JS WILL INSERT SONGS HERE -->
+    <div class="song-list" id="songList"></div>
+  </div>
+</div>
+
+
+</body>
+
+<style>
+    body {
+      background-color: rgb(0, 0, 0);
+    background-image: url(../assets2/bgs/rainbowstars.gif);
+    background-size:auto;
+    background-repeat: repeat;
+    background-position: center ;
+    }
+
+    /* ===== PLAYER CONTAINER ===== */
+    .audio-player {
+      font-family: 'Courier New', Courier, monospace;
+      position: fixed;
+      top: 450px; 
+      right: 0;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 500px;
+      background: linear-gradient(
+        180deg,
+        rgba(183, 244, 216, 0.95),
+        rgb(84, 221, 173)
+      );
+      overflow: hidden;
+      transition: width 0.3s ease;
+      color: rgb(48, 133, 109);
+      z-index: 9999;
+    }
+
+    .audio-player.open {
+      width: 320px;
+    }
+
+    /* ===== TOGGLE ===== */
+    .toggle {
+      width: 50px;
+      height: 50px;
+      border: none;
+      background: none;
+      color: rgb(255, 255, 255);
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+  .player-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  gap: 6px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.25s ease;
+}
+
+.audio-player.open .player-content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+    audio {
+      width: 100%;
+    }
+
+    .song-list {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-bottom: 70px;
+    }
+
+    .song-btn {
+      font-family: "Liberation Mono", monospace;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(183, 255, 229, 0.366);
+      border: none;
+      color: rgb(48, 133, 109);
+      padding: 8px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .song-btn img {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+    }
+
+
+    .playlist-switch button {
+  background: rgba(183, 255, 227, 0.82); 
+  border: none;
+  color: rgb(48, 133, 109);
+  font-family: "Liberation Mono", monospace;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.popup-text {
+  top: 180px;
+  bottom: 180px;
+  position: fixed;
+  inset: 0;              
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  z-index: 2147483647;   
+  pointer-events: none;  
+}
+
+.popup-text.active {
+  display: flex;
+}
+
+.popup-text > div {
+  display: flex;
+  flex-direction: column;   /* ⬅ image on top, text below */
+  align-items: center;
+  gap: 16px;
+
+  max-width: 500px;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+
+.info-popup {
+  position: fixed;
+  inset: 140px 120px 120px 120px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.popup-image {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.popup-caption {
+  max-width: 620px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: white;
+}
+
+.popup-text > .popup-inner {
+  margin-top: 100px; 
+}
+  </style>
+
+
+
+</html>
 

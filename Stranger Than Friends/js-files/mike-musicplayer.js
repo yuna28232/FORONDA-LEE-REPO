@@ -1,7 +1,7 @@
 const audio = document.getElementById("audio");
 const title = document.getElementById("song-title");
 const songList = document.getElementById("songList");
-const defaultText = "Select between Mike's nostalgic and modern mixtapes to begin!";
+const defaultText = "Using the music player to your right, toggle it by clicking on the blue heart icon, and select between Mike's nostalgic and modern mixtapes to begin!";
 
 const playlists = {
   playlist1: [
@@ -27,7 +27,7 @@ const playlists = {
     },
     {
       name: "Open Arms - Journey",
-      src: "../assets2/music/will/oa.mp3",
+      src: "../assets2/music/mike/oa.mp3",
       img: "../assets2/albums/oa.png",
       text: "Open Arms (by Journey) encapsulates how Mike felt when him and Will had fought and encountered plenty of misunderstandings during the entirety of the fourth season. The line 'We sailed on together, we drifted apart' describes the physical and emotional distance between them, caused from Will moving away from Hawkins, Indiana in the third season finale. It caused Mike to feel like a part of him was missing, similar to the line 'Living without you, living alone, this empty house seems so cold'. Overall, this was what skewed their strong bond and temporarily altered the course and chemistry of their friendship. <br> When Mike first visited Will and Eleven in California, they first clashed and created discourse between both of them--yet not long after, Mike had immediately tried to reconcile with Will (as represented in the next line 'And here you are by my side'), which shows how much Mike cannot stray away from their relationship, with how much he respects Will and his feelings, regardless of him being oblivious and ignorant towards them at times. "
 

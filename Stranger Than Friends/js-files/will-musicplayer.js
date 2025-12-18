@@ -1,7 +1,7 @@
 const audio = document.getElementById("audio");
 const title = document.getElementById("song-title");
 const songList = document.getElementById("songList");
-const defaultText = "Select between Will's nostalgic and modern mixtapes to begin!";
+const defaultText = "Using the music player to your right, toggle it by clicking on the yellow heart icon, and select between Will's nostalgic and modern mixtapes to begin!";
 
 const playlists = {
   playlist1: [

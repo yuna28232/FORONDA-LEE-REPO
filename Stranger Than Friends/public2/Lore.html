@@ -1,1 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <title> Stranger Than Friends</title>
+  <link rel="stylesheet" href="../css files/styles.css">
+</head>
+<header>
+  <div id="header"></div>
+
+<script>
+  fetch("./handf.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+</header>
+
 

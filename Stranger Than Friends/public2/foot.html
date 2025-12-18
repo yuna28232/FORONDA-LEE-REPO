@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+  <title> Stranger Than Friends</title>
+  <link rel="stylesheet" href="../css files/styles.css">
+  <link rel="icon" href="../assets2/other/favicon.ico">
+</head>
+<header>
+  <div id="header"></div>
+
+<script>
+  fetch("./handf.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+</header>
+
+<div class="start">
+  <img src="../assets2/other/hello.png" alt="hello, adventurer..." class="hello">
+</div>
+
+<body>
+  <div id="musicToggle" class="music-btn">
+  <img
+    src="../assets2/btns/pause.png"
+    data-play="../assets2/btns/playing.png"
+    data-pause="../assets2/btns/pause.png"
+    alt="Music toggle"
+    class="music-icon"
+  >
+  </div>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="../assets2/music/David Bowie - Starman (HQ).mp3" type="audio/mpeg">
+</audio>
+  <p style="vertical-align: auto;vertical-align: middle;padding-left: 30ch;">
+    Wiki, C. T. S. (n.d.). Byler. Shipping Wiki. <a href="https://shipping.fandom.com/wiki/Byler">https://shipping.fandom.com/wiki/Byler"</a></br>
+    Wikipedia contributors. (2025, December 14). Stranger things. Wikipedia. </br><a href = "https://en.wikipedia.org/wiki/Stranger_Things">https://en.wikipedia.org/wiki/Stranger_Things</a></br>
+    W3Schools.com. (n.d.). <a href= "https://www.w3schools.com/html/">https://www.w3schools.com/html/</a></br>
+    W3Schools.com. (n.d.-b).<a href= "https://www.w3schools.com/css/default.asp">https://www.w3schools.com/css/default.asp</a>
+</body>
+
+<script>
+  const music = document.getElementById("bgMusic");
+  const button = document.getElementById("musicToggle");
+  const icon = button.querySelector(".music-icon");
+
+  const playIcon = icon.dataset.play;
+  const pauseIcon = icon.dataset.pause;
+  
+  button.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      icon.src = playIcon;
+    } else {
+      music.pause();
+      icon.src = pauseIcon;
+    }
+  });
+</script>
+
+<style>
+    body {
+    background-image: url(../assets2/bgs/water.png);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    }
+
+
+</style>

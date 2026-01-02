@@ -71,14 +71,6 @@ body>p {
   filter: brightness(1.2);
 }
 
-.references > img {
-  display: block;
-  width: 500px;
- padding-top: 150px;
-  margin:  auto;
-  filter: brightness(1.2);
-}
-
 footer{
   background-color: black;
   color: #41ead4;

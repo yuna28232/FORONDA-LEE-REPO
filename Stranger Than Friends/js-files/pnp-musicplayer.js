@@ -55,7 +55,7 @@ const playlists = {
 const playlistIntro = {
   playlist1: {
     text: "Mike and Will's 'Miwi' dynamic is centered on the two kids’ innocence, where they remained focused on playing D&D and having small adventures that always lead to laughter and memories. There were no labels, no heavy arguments, and no insecurities, just two children comfortable enough to share the world with eachother. It was a time when they could still express what they felt freely without any fear and uncomfort, as innocent and 'naive' kids.",
-    img: "../assets2/other/babybyler.gif"
+    img: "../assets2/other/miwi.gif"
   },
   playlist2: {
     text: "As time moved, their feelings grew. Their bond was as strong as ever, yet their dynamic started to feel different, because over time, they had both changed as people. They shifted to a 'Byler' dynamic, where the simplicity of their love towards eachother slipped from their hands and through the cracks of their misunderstanding, as they started to explore their emotions, and wonder if what they felt about the other wasn't right, but instead abnormal. The societal pressure of being fitting in and being 'normal' (heterosexual/straight) were chains that held both Mike and Will back. This was a time when their feelings developed into something complicated, unsaid, hidden, and all the more intense.",

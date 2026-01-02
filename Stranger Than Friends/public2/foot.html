@@ -16,57 +16,31 @@
 </script>
 </header>
 
-<div class="start">
-  <img src="../assets2/other/hello.png" alt="hello, adventurer..." class="hello">
+<div class="references">
+  <img src="../assets2/other/blinkiesCafe-c8.gif" alt="references">
 </div>
 
 <body>
-  <div id="musicToggle" class="music-btn">
-  <img
-    src="../assets2/btns/pause.png"
-    data-play="../assets2/btns/playing.png"
-    data-pause="../assets2/btns/pause.png"
-    alt="Music toggle"
-    class="music-icon"
-  >
-  </div>
-
-<audio id="bgMusic" loop preload="auto">
-  <source src="../assets2/music/David Bowie - Starman (HQ).mp3" type="audio/mpeg">
-</audio>
-  <p style="vertical-align: auto;vertical-align: middle;padding-left: 30ch;">
-    Wiki, C. T. S. (n.d.). Byler. Shipping Wiki. <a href="https://shipping.fandom.com/wiki/Byler">https://shipping.fandom.com/wiki/Byler"</a></br>
-    Wikipedia contributors. (2025, December 14). Stranger things. Wikipedia. </br><a href = "https://en.wikipedia.org/wiki/Stranger_Things">https://en.wikipedia.org/wiki/Stranger_Things</a></br>
-    W3Schools.com. (n.d.). <a href= "https://www.w3schools.com/html/">https://www.w3schools.com/html/</a></br>
-    W3Schools.com. (n.d.-b).<a href= "https://www.w3schools.com/css/default.asp">https://www.w3schools.com/css/default.asp</a>
+  <p>
+    (1) Wiki, C. T. S. (n.d.). Byler. Shipping Wiki. <a href="https://shipping.fandom.com/wiki/Byler">https://shipping.fandom.com/wiki/Byler"</a></br>
+    (2) Wikipedia contributors. (2025, December 14). Stranger things. Wikipedia. </br><a href = "https://en.wikipedia.org/wiki/Stranger_Things">https://en.wikipedia.org/wiki/Stranger_Things</a></br>
+    (3) W3Schools.com. (n.d.-a). <a href= "https://www.w3schools.com/html/">https://www.w3schools.com/html/</a></br>
+    (4) W3Schools.com. (n.d.-b).<a href= "https://www.w3schools.com/css/default.asp">https://www.w3schools.com/css/default.asp</a><br>
+    <br> Though the show has come to a close, never let your love for the characters and the story EVER die. We thank you for visiting our website. 
+    <br><br> Over and out.
+    </p>
 </body>
 
-<script>
-  const music = document.getElementById("bgMusic");
-  const button = document.getElementById("musicToggle");
-  const icon = button.querySelector(".music-icon");
-
-  const playIcon = icon.dataset.play;
-  const pauseIcon = icon.dataset.pause;
-  
-  button.addEventListener("click", () => {
-    if (music.paused) {
-      music.play();
-      icon.src = playIcon;
-    } else {
-      music.pause();
-      icon.src = pauseIcon;
-    }
-  });
-</script>
 
 <style>
     body {
-    background-image: url(../assets2/bgs/water.png);
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position: center;
+    background-color: black;
     }
 
+    body>p{
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-top: 500px;
+    }
 
 </style>

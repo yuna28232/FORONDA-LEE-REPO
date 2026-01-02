@@ -71,6 +71,14 @@ body>p {
   filter: brightness(1.2);
 }
 
+.references > img {
+  display: block;
+  width: 500px;
+ padding-top: 150px;
+  margin:  auto;
+  filter: brightness(1.2);
+}
+
 footer{
   background-color: black;
   color: #41ead4;
@@ -135,7 +143,7 @@ footer, body {
   right: 0;
   transform: translateY(-50%);
   
-  width: 50px;               /* collapsed width */
+  width: 50px;              
   height: 200px;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 12px 0 0 12px;

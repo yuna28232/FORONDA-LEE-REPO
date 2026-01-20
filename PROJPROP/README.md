@@ -8,7 +8,7 @@
 ### Features
 - All-devices friendly :)
 - Season 5 Vol. 2-3s Lore update in "Their Lore" page
-- New interface for Will and Mike's mixtape players (dropdown system)
+- New interface for the "Their Lore" page (dropdown system)
 - An HTML form titled "Your Theories", where users are able to anonymously input their wildest theories on the Stranger Things universe, in a freedom wall format (accessible via navigation bar button)
 
 ### Details

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeah, crazy together.</title>
+    <link rel="icon" href="../assets2/other/favicon.ico">
+
+    <style>
+        /* Reset and base */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url('./Stranger Than Friends/assets2/bgs/home.png');
+            background-size: cover;      /* cover ensures full screen */
+            background-repeat: no-repeat;
+            background-position: center center;  /* center the image */
+        }
+
+        /* Button container */
+        .start-btn {
+            display: block;
+            text-align: center;
+            border: none;
+            background: none;
+            padding: 0;
+        }
+
+        .start-btn img {
+            width: 80vw;          /* responsive width relative to viewport */
+            max-width: 1200px;    /* keep desktop size */
+            height: auto;         /* maintain aspect ratio */
+            transition: transform 0.3s ease;
+        }
+
+        .start-btn img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Media queries for smaller screens */
+        @media (max-width: 768px) {
+            .start-btn img {
+                width: 85vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .start-btn img {
+                width: 90vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="./Stranger Than Friends/public2/lobby.html" class="start-btn">
+        <img src="./Stranger Than Friends/assets2/btns/start.png" alt="Start Button">
+    </a>
+</body>
+</html>

@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="../css files/styles.css">
     <link rel="icon" href="../assets2/other/favicon.ico">
 
+
 <script>
 function checkEmpty(field) {
   if (field.value.trim() === "") {
@@ -14,76 +15,115 @@ function checkEmpty(field) {
 }
 
 function confirmReset() {
-  return confirm("Are you sure you want to reset the form?");
+  return confirm("Are you sure you want to reset your work?");
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('theory');
 
   form.addEventListener('submit', function(event) {
-    event.preventDefault(); // stop default form submit
+    event.preventDefault(); 
 
     const name = document.getElementById('name').value.trim();
     const why = document.getElementById('why').value.trim();
 
     if (!name || !why) {
-      alert("Please fill in all required fields!");
+      alert("Please fill in all required fields!!!");
       return;
     }
 
-    // Save data locally (can be read by another page)
+    
     let savedData = JSON.parse(localStorage.getItem('theories')) || [];
     savedData.push({ name, why });
     localStorage.setItem('theories', JSON.stringify(savedData));
 
-    alert(`Thank you, ${name}! Your theory has been saved.`);
+    alert(`Thank you, ${name}! Your theory has been saved to our database.`);
     form.reset();
   });
 });
 </script>
 
         <style>
-          
+
+        
 
         
           body {font-family: Consolas, Hack, "Liberation Mono", monospace;
-                background-color: #abecb960;
-                padding :  50px;
-                background-image: url(../assets2/bgs/BYLER.png);
-                background-size:100px;
-                background-repeat: repeat;
-                background-position: center ;}
+          background-color: #000000bb;
+          background-image: url(../assets2/bgs/we.gif);
+          background-size: auto;
+          background-repeat: repeat;
+          background-position: center;
+        }
+        .form{
+          min-height: 100vh;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
 
-          form {font-family: Consolas, Hack, "Liberation Mono", monospace;
-                background-color: #365a3e60;
-                margin : 45px auto;
-                padding : 40px 50px;
-                width : 600px}
+        
 
-          fieldset {padding : 20px }
+
+
+          form {
+            font-family: Consolas, Hack, "Liberation Mono", monospace;
+            background-color: #a4c9ffb5;
+            width: 80%;
+            max-width: 900px;
+            border-radius: 18px;
+            padding: 60px 70px;
+  
+}
+
+
+                
+          fieldset {padding : 20px;
+          color: #232e51; }
+
+          input {
+              color: #232e51;
+            }
           
-          legend {font-weight:bold}
+          legend {font-weight:bolder}
 
-          input:focus,
-          textarea:focus {border: 3px solid #7695fd;
-                          background-color: #fffc37;
+          textarea:focus {border: 3px solid rgb(115, 208, 157);
+                          background-color: #bbffcf;
                           outline : none}
+        
+          .invalid {border: 3px solid rgb(255, 133, 133);
+                    background-color: #ffb0b0;}
+
+          input, textarea {
+             width: 100%;
+             padding: 10px;
+             font-family: inherit;
+             font-size: 15px;
+             border: 3px solid #7695fd;
+            background-color: #fffea9;
+
           
-          .invalid {border: 3px solid rgb(253, 117, 117);
-                    background-color: #ffd6d6;}
+
+
+            
+        
+          
+}
           
       </style>
   </head>
 
   <body>
+ <div class="form">
       <form method="post" action="submit"
         id = "theory">
         
         <fieldset>
-            <legend>Your Theories</legend>
-            <label for="name">Anonymous name :  </label>
+            <legend>What do YOU think really happened?</legend>
+            <label for="name">Your anonymous name:  </label>
             <input type="text" id="name" name="name" required onblur="checkEmpty(this)"><br>
-            <label for="why">Tell us about your Theories! </label><br>
+            <label for="why">Tell us about your theories! </label><br>
             <textarea id="why" name="why" rows="5 " cols="67" required  onblur="checkEmpty(this)"></textarea>
         </fieldset>
       
@@ -91,8 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
       <input type="reset" value="Reset">
     
       </form>
+ </div>
+
+
   <footer> 
-  Click <a href="./foot.html">here</a> to see our references!
+  Click <a href="./foot.html">here</a> to see our references! 
+ 
+
   </footer>
   </body> 
   </html>

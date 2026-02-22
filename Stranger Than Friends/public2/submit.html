@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Theories</title>
+</head>
+<body>
+  <h1>Submitted Theories</h1>
+  <div id="show-theories"></div>
+
+  <script>
+    const savedData = JSON.parse(localStorage.getItem('theories')) || [];
+    const container = document.getElementById('show-theories');
+
+    savedData.forEach(item => {
+      const div = document.createElement('div');
+      div.innerHTML = `<strong>${item.name}:</strong> ${item.why}`;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>

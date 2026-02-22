@@ -1,75 +1,98 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="../css files/styles.css">
-  <link rel="icon" href="../assets2/other/favicon.ico">
- <script>
-    
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <link rel="stylesheet" href="../css files/styles.css">
+    <link rel="icon" href="../assets2/other/favicon.ico">
 
-    function confirmReset() {
-      return confirm("Are you sure you want to reset the form?");}
+<script>
+function checkEmpty(field) {
+  if (field.value.trim() === "") {
+    field.classList.add("invalid");
+  } else {
+    field.classList.remove("invalid");
+  }
+}
 
-     function checkEmpty(field) {
-    if (field.value.trim() === "") {
-      field.classList.add("invalid");
-    } else {
-      field.classList.remove("invalid");
-    } }
-    
-  </script>
-      <style>
+function confirmReset() {
+  return confirm("Are you sure you want to reset the form?");
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('theory');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // stop default form submit
+
+    const name = document.getElementById('name').value.trim();
+    const why = document.getElementById('why').value.trim();
+
+    if (!name || !why) {
+      alert("Please fill in all required fields!");
+      return;
+    }
+
+    // Save data locally (can be read by another page)
+    let savedData = JSON.parse(localStorage.getItem('theories')) || [];
+    savedData.push({ name, why });
+    localStorage.setItem('theories', JSON.stringify(savedData));
+
+    alert(`Thank you, ${name}! Your theory has been saved.`);
+    form.reset();
+  });
+});
+</script>
+
+        <style>
+          
+
         
+          body {font-family: Consolas, Hack, "Liberation Mono", monospace;
+                background-color: #abecb960;
+                padding :  50px;
+                background-image: url(../assets2/bgs/BYLER.png);
+                background-size:100px;
+                background-repeat: repeat;
+                background-position: center ;}
 
+          form {font-family: Consolas, Hack, "Liberation Mono", monospace;
+                background-color: #365a3e60;
+                margin : 45px auto;
+                padding : 40px 50px;
+                width : 600px}
+
+          fieldset {padding : 20px }
+          
+          legend {font-weight:bold}
+
+          input:focus,
+          textarea:focus {border: 3px solid #7695fd;
+                          background-color: #fffc37;
+                          outline : none}
+          
+          .invalid {border: 3px solid rgb(253, 117, 117);
+                    background-color: #ffd6d6;}
+          
+      </style>
+  </head>
+
+  <body>
+      <form method="post" action="submit"
+        id = "theory">
+        
+        <fieldset>
+            <legend>Your Theories</legend>
+            <label for="name">Anonymous name :  </label>
+            <input type="text" id="name" name="name" required onblur="checkEmpty(this)"><br>
+            <label for="why">Tell us about your Theories! </label><br>
+            <textarea id="why" name="why" rows="5 " cols="67" required  onblur="checkEmpty(this)"></textarea>
+        </fieldset>
       
-        body {font-family: Consolas, Hack, "Liberation Mono", monospace;
-              background-color: #abecb960;
-              padding :  50px;
-              background-image: url(../assets2/bgs/BYLER.png);
-              background-size:;
-              background-repeat: no-repeat;
-              background-position: center ;}
-
-        form {font-family: Consolas, Hack, "Liberation Mono", monospace;
-              background-color: #365a3e60;
-              margin : 45px auto;
-              padding : 40px 50px;
-              width : 600px}
-
-        fieldset {padding : 20px }
-        
-        legend {font-weight:bold}
-
-        input:focus,
-        textarea:focus {border: 3px solid #7695fd;
-                        background-color: #fffc37;
-                        outline : none}
-        
-        .invalid {border: 3px solid rgb(253, 117, 117);
-                  background-color: #ffd6d6;}
-        
-    </style>
-</head>
-
-<body>
-    <form method="post" action="submit"
-  
-      onreset="return confirmReset()">
-      
-    <fieldset>
-        <legend>Your Theories</legend>
-        <label for="name">Anonymous name :  </label>
-        <input type="text" id="name" name="name" required onblur="checkEmpty(this)"><br>
-        <label for="why">Tell us about your Theories! </label><br>
-        <textarea id="why" name="why" rows="5 " cols="67" required  onblur="checkEmpty(this)">
-        </textarea>
-    </fieldset>
-  
-    <input type="submit" value="Submit">
-    <input type="reset" value="Reset">
-  
-    </form>
-<footer> 
-Click <a href="./foot.html">here</a> to see our references!
-</footer>
-</body> 
-</html>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    
+      </form>
+  <footer> 
+  Click <a href="./foot.html">here</a> to see our references!
+  </footer>
+  </body> 
+  </html>

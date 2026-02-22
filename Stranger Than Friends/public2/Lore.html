@@ -1,135 +1,212 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <title> Stranger Than Friends</title>
+  <title>Stranger Than Friends</title>
   <link rel="stylesheet" href="../css files/styles.css">
   <link rel="icon" href="../assets2/other/favicon.ico">
+
+  <style>
+  body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+    font-family: Consolas, Hack, "Liberation Mono", monospace;
+    color: aliceblue;
+    background-image: url(../assets2/other/bg.gif);
+    background-size: auto;
+    background-repeat: repeat;
+    background-position: center;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+  }
+
+  .panel {
+    margin-top: 69px;
+    margin-bottom: 120px;
+    height: calc(100vh - 260px);
+    overflow-y: auto;
+    width: 100%;
+    max-width: 800px;
+    background: black;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .gif-separator img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+ 
+  .accordion {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    height: 45px;      
+    width: 100%;
+    padding: 0;         
+    margin-top: 10px;
+    border-radius: 4px;
+
+    text-indent: -9999px;
+  }
+
+  .accordion.active {
+    filter: brightness(1.2);
+  }
+
+  .s1 { background-image: url("../assets2/other/blinkiesCafe-3S.gif"); }
+  .s2 { background-image: url("../assets2/other/blinkiesCafe-ke.gif"); }
+  .s3 { background-image: url("../assets2/other/blinkiesCafe-t2.gif"); }
+  .s4 { background-image: url("../assets2/other/blinkiesCafe-MS.gif"); }
+  .s5 { background-image: url("../assets2/other/blinkiesCafe-V2.gif"); }
+
+
+  .accordion-content {
+    display: none;
+    margin-top: 5px;
+  }
+
+  .accordion-inner-box {
+    background-color: #111; 
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    line-height: 1.5;
+
+    width: 80%;           
+    max-width: 600px;     
+    margin: 0 auto; 
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  </style>
 </head>
+
 <header>
   <div id="header"></div>
-
-<script>
-  fetch("./handf.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
+  <script>
+    fetch("./handf.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
 </header>
 
 <body>
- <main class="page">
-    <section class="panel">
-     
 
-      <div class="gif-separator">
-  <img src="../assets2/other/header1.gif" alt="">
-</div>
-      <h1>Byler Lore</h1>
-      <div class="gif-separator">
-  <img src="../assets2/other/header1.gif" alt="">
-</div>
+<main class="page">
+  <section class="panel">
 
-      <div class="gif-separator">
-  <img src="../assets2/other/" alt="">
-</div>
-      <p>
+    <div class="gif-separator">
+      <img src="../assets2/other/header1.gif" alt="">
+    </div>
+
+    <h1>Byler Lore</h1>
+
+    <div class="gif-separator">
+      <img src="../assets2/other/header1.gif" alt="">
+    </div>
+
+        <p>
         How they came to be inseparable was simple. <br> The first meeting of Mike Wheeler and Will Byers happened on their first day of kindergarten. <br> Mike approached Will, who was swinging alone during recess, and sat on the swingset next to him. Mike, who was just as lonely as the other, asked, “Do you want to be friends?”. <br> Will responded with a cheerful "Yes!" to the boy’s question. From then on, these two boys weren’t alone anymore--because now they had each other. 
       </p>
 
-      <div class="gif-separator">
-  <img src="../assets2/other/blinkiesCafe-3S.gif" alt="">
-</div>
-
-      <p>
+ 
+    <button class="accordion s1">Season 1</button>
+    <div class="accordion-content">
+      <div class="accordion-inner-box">
+               <p>
         After Will’s disappearance, Mike had to grieve for his best friend. Because Mike could not accept this, he took it upon himself to find Will himself. <br> Mike’s mother strongly disapproved of this, but Mike believed that he was the only one acting normal about this, as he shouted 'I'm the only one that cares about Will!' at the Wheeler dinner table. <br> Later on, he finds proof that Will is still alive through Eleven's powers, which fuels Mike’s determination even more. This shows that unwavering loyalty has present in their relationship since the beginning, and how they constantly believed in the other, even when no one else did.
       </p>
+      </div>
+    </div>
 
-      <div class="gif-separator">
-  <img src="../assets2/other/blinkiesCafe-ke.gif" alt="">
-</div>
-      <p>
+    <button class="accordion s2">Season 2</button>
+    <div class="accordion-content">
+      <div class="accordion-inner-box">
+       <p>
         The traumatic experience had a tremendous impact on the two characters. Mike, who moved onto grieving El's disappearance, became more clingy as he called her every night through his walkie-talkie, while Will continued to cope with the trauma he gained from his trip to the Upside Down. <br> However, Mike continued to become more observant and protective towards Will--noticing every little detail of whatever he did. In turn, Will opened up to Mike, needing someone to lean on, someone he could trust. The quote “If we’re both going crazy, then we’ll go crazy together, right?” was said by Mike Wheeler, in an attempt to reassure Will's fears and worries. Towards the end of the season, Mike helped Will to break away from the Mind Flayer's possession, strengthening their bond even further. <br> This shows the unbreakable bond and a promise that they would always be together no matter what they become.
       </p>
+      </div>
+    </div>
 
-      <div class="gif-separator">
-  <img src="../assets2/other/blinkiesCafe-t2.gif" alt="">
-</div>
-
-
-      <p>
+    <button class="accordion s3">Season 3</button>
+    <div class="accordion-content">
+      <div class="accordion-inner-box">
+        <p>
         This season became a huge turning point for their characters. <br> Will felt left behind by his best friend, due to Mike 'growing up' andmfocusing more on his relationship with Eleven. This shows the inescapable truth of growing up. Will couldn’t face this reality, who remained stuck in a 'childish' mindset, wanting to retreat into the comforts of Mike's basement, and play D&D to escape his troubles. Mike calls him out for this, hitting Will harsly in the heart with the line 'It's not my fault you don't like girls!'. <br> <br> The dialogue had went like so: <br> <br> Mike – 'El's not stupid, it's not my fault you don't like girls! *pause* I'm not trying to be a jerk. Okay? But we're not kids anymore. I mean, what did you think, really? That we were never gonna get girlfriends? We were just gonna sit in my basement all day and play games for the rest of our lives?'
 <br> <br> Will – 'Yeah. I guess I did. I really did.'' <br> <br>
 After this conflict, Mike immediately realizes that he needed to fix this, so he took the initiative to go to Will’s house and talk, who at the time, does not fully return the apology.
 In the end, it becomes Mike's turn to feel left behind by Will, who moves away to California along with the Byers family.
       </p>
+      </div>
+    </div>
 
-      <div class="gif-separator">
-  <img src="../assets2/other/blinkiesCafe-MS.gif" alt="">
-</div>
-
-
-      <p>
+    <button class="accordion s4">Season 4</button>
+    <div class="accordion-content">
+      <div class="accordion-inner-box">
+          <p>
         When Mike plans a visit to California for summer break--mainly to see Eleven, Will is ecstatic. He spends most of his time making a special painting for Mike, and becomes so engulfed in the task that Eleven shares a theory in one of her many letters to Mike that the painting might be for a girl Will likes. <br> Once Mike arrives at the airport, he sees the Cali group (El, Will, Jonathan (Will's brother), and Argyle (Jonathan's friend)) and runs straight to El, giving her flowers and hugging her tightly. After that he notices Will, noticably with much less enthusiasm. He shares an awkward, half-hearted hug before shifting all of his undivided attention to his girlfriend. <br>As the story continues, The Cali group become glued at the hip, with the exception of El. Simultaneously, Mike and Will were in forced proximity for the entirety of the season.<br> In one of the episodes, Mike ends up confiding in Will about the recent relationship problems he had been experiencing with Eleven. To settle things, Will decides to be selfless and give the painting to Mike, along with a veiled confession of his love masked as an affirmation that Eleven still needed Mike. It served as Will’s way of expressing his feelings for Mike, wrapped up in an attempt to reassure Mike of his brittle romantic relationship with Eleven. <br> After Will gives this painting, he looks out the car window and silently cries, saddened that he couldn’t declare the feelings that have been eating him from inside out. <br> This season was when Will's feelings for Mike became undeniable for the audience.
       </p>
 
-      <div class="gif-separator">
-  <img src="../assets2/other/blinkiesCafe-V2.gif" alt="">
-</div>
+      </div>
+    </div>
 
-
-      <p>
-        Under the circumstances of Hawkins being ripped in half by Vecna, with the Byers house becoming destroyed in the process, Will and Mike have lived under the same roof for 18 months. Although the series did not show what happened during that time, it is evident that their bond resurfaced and became stronger, and so did their feelings. Will tries to understand himself in which he runs to Robin, a queer character, for advice on his 'questionable' feelings for Mike. She helps him realize that he doesn’t need to fully rely on Mike's acceptance to be his complete self, but instead, he must first accept himself and for who he truly was. <br> Using this, along with Mike's flattering theory that Will might be able to siphon Vecna's powers and channel it into good purposes, he saves the party by turning the theory true, saving Mike from the horrors of the Mac-Z simultaneously. <br> <br> In Volume 2, the party remains incredibly focused on defeating Vecna. Will however, is stuck in a threatening chokehold from Vecna himself. While we do not get to see what horrifying visions Will is exposed to, it is explained in his coming-out scene that Vecna showed him one of his biggest fears: his friends and family leaving him and moving on after discovering his sexuality. <br> In order for Vecna to have no ammunition against Will, he believes that he must confront this fear by sharing it with the whole party. Will includes in his speech how his unnamed crush (Mike) is simply his Tammy, and how it was never about him, when it was really about himself. He receives positive reactions from everyone in the room, with only Mike seeming speechless.<br> Later on, Mike confronts Will about his speech while on the radio tower. He apologizes for how he was so oblivious to Will's feelings in the past. Will smiles and lightheartedly accepts the apology, asking if they are still on good terms--as friends. Mike replies almost ambiguously at first, with Will's face lighting up with hope: <br><br> "Friends? No thanks..." <br><br> Before crushing Will's hope once again: <br><br> "...Best friends." <br><br> In the climax of the season, Mike ends up hallucinating a conversation with Eleven in the Void, seconds away before she sacrifices herself in the collapsing wormhole. She is tearful and sentimental towards Mike, who is somewhat slightly less emotional, holding Eleven stiffly. When Eleven says her last "I love you" to Mike, he doesn't return the words. <br> As Mike is taken out of the Void, the Mac-Z's gate to the Upside Down closes itself--with El inside. <br> Fast forward to the end of the season, a time jump of 18 months has passed. Everyone seems to have moved on, except Mike. As they discuss their fairy-tale endings in the epilogue, Mike describes his as writing countless stories of his friends' successes, but never his. He also mentions that there is one story that he can never tell, which is Eleven's story. Mike, along with the party, chooses to believe that El isn't dead. Instead she is enjoying herself in a far away place, with 3 waterfalls. <br> The final shot of the show closes out with Mike gazing at his bookshelf, where each of his friends' D&D binders are stored. <br> But he isn't looking at all of them. He affectionately brushes his and Will's binder with his hand, before leaving his basement. <br> While Byler might not be endgame, this is to be taken as an ambiguous ending, just like El's. We choose to believe. 🥹
+    <button class="accordion s5">Volume 2</button>
+    <div class="accordion-content">
+      <div class="accordion-inner-box">
+            <p>
+        Under the circumstances of Hawkins being ripped in half by Vecna, with the Byers house becoming destroyed in the process, Will and Mike have lived under the same roof for 18 months. Although the series did not show what happened during that time, it is evident that their bond resurfaced and became stronger, and so did their feelings. Will tries to understand himself in which he runs to Robin, a queer character, for advice on his 'questionable' feelings for Mike. She helps him realize that he doesn’t need to fully rely on Mike's acceptance to be his complete self, but instead, he must first accept himself and for who he truly was. <br> Using this, along with Mike's flattering theory that Will might be able to siphon Vecna's powers and channel it into good purposes, he saves the party by turning the theory true, saving Mike from the horrors of the Mac-Z simultaneously. <br> <br> In Volume 2, the party remains incredibly focused on defeating Vecna. Will however, is stuck in a threatening chokehold from Vecna himself. While we do not get to see what horrifying visions Will is exposed to, it is explained in his coming-out scene that Vecna showed him one of his biggest fears: his friends and family leaving him and moving on after discovering his sexuality. <br> In order for Vecna to have no ammunition against Will, he believes that he must confront this fear by sharing it with the whole party. Will includes in his speech how his unnamed crush (Mike) is simply his Tammy, and how it was never about him, when it was really about himself. He receives positive reactions from everyone in the room, with only Mike seeming speechless.<br> Later on, Mike confronts Will about his speech while on the radio tower. He apologizes for how he was so oblivious to Will's feelings in the past. Will smiles and lightheartedly accepts the apology, asking if they are still on good terms--as friends. Mike replies almost ambiguously at first, with Will's face lighting up with hope: <br><br> "Friends? No thanks..." <br><br> Before crushing Will's hope once again: <br><br> "...Best friends." <br><br> In the climax of the season, Mike ends up hallucinating a conversation with Eleven in the Void, seconds away before she sacrifices herself in the collapsing wormhole. She is tearful and sentimental towards Mike, who is somewhat slightly less emotional, holding Eleven stiffly. When Eleven says her last "I love you" to Mike, he doesn't return the words. <br> As Mike is taken out of the Void, the Mac-Z's gate to the Upside Down closes itself--with El inside. <br> Fast forward to the end of the season, a time jump of 18 months has passed. Everyone seems to have moved on, except Mike. As they discuss their fairy-tale endings in the epilogue, Mike describes his as writing countless stories of his friends' successes, but never his. He also mentions that there is one story that he can never tell, which is Eleven's story. Mike, along with the party, chooses to believe that El isn't dead. Instead she is enjoying herself in a far away place, with 3 waterfalls. <br> The final shot of the show closes out with Mike gazing at his bookshelf, where each of his friends' D&D binders are stored. <br> But he isn't looking at all of them. He affectionately brushes his and Will's binder with his hand, before leaving his basement. <br> While Byler might not be endgame, this is to be taken as an ambiguous ending, just like El's. We choose to believe. 
       </p>
+      </div>
+    </div>
 
-    </section>
-  </main>
+  </section>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const acc = document.querySelectorAll(".accordion");
+
+  acc.forEach(button => {
+    button.addEventListener("click", function() {
+
+      acc.forEach(other => {
+        if (other !== this) {
+          other.classList.remove("active");
+          other.nextElementSibling.style.display = "none";
+        }
+      });
+
+      this.classList.toggle("active");
+
+      const content = this.nextElementSibling;
+      content.style.display =
+        content.style.display === "block" ? "none" : "block";
+    });
+  });
+});
+</script>
 
 </body>
-
-<style>
-
-
-body {
-  height: 100%;
-  overflow: hidden;
-  margin: 0;
-  font-family: sans-serif;
-  text-align: center;
-  font-family: Consolas, Hack, "Liberation Mono", monospace;
-color: aliceblue;
-  background-image: url(../assets2/other/bg.gif);
-  background-size: auto;
-    background-repeat: repeat;
-    background-position: center;
-    
-
-}
-
-.page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 40px 16px;
-}
-.panel {
-   margin-top: 69px;  
-  margin-bottom: 120px; 
-  height: calc(100vh - 260px); 
-  overflow-y: auto;
-  padding: 20px;
-  width: 100%;
-  max-width: 800px;
-  background: rgb(0, 0, 0);
-  padding: 32px;
-  border-radius: 16px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-footer{
-  text-align: justify;
-}
-</style>
 </html>
-
-

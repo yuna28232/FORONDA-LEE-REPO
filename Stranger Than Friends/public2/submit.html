@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>View Theories</title>
+  <title>Your Theories <3</title>
 </head>
 <body>
-  <h1>Submitted Theories</h1>
+  <h1>Your Theories!</h1>
+  <h2>The hall of fame for all of your biggest imaginations :)</h2>
   <div id="show-theories"></div>
+
+  <style>
+    h1{
+      text-align: center;
+      font-family:Consolas, Hack, "Liberation Mono", monospace ;
+      color: rgb(157, 175, 226);
+    }
+
+    h2{
+      font-family: 'Courier New', Courier, monospace;
+    }
+    body{
+      color: rgb(157, 175, 226);
+      background-color: rgb(36, 52, 106);
+    }
+    
+  </style>
 
   <script>
     const savedData = JSON.parse(localStorage.getItem('theories')) || [];

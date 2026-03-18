@@ -1,9 +1,56 @@
 # "Stranger Than Friends": The Project Proposal
 ## The Fan Immersion and Connection of a Show and Its "Ships" Through Music
 
+# Q4 Proposal Update 
+
+### Title: Stranger Than Friends
+
+### Description
+
+Music matters, and so does the ship "Byler", a supernova that never dies!
+Stranger Than Friends connects Byler lore (from the show Stranger Things) to meaningful tunes that get fans stuck in their feels.
+
+### For?
+
+This is a love letter dedicated to all of the Byler fans who still choose to believe, despite what has been stated as canon.
+As two people with music constantly coursing through their veins, we wanted to make Byler something bigger than it already was. Something that makes people feel beyond what they saw in the series.
+
+For all the music lovers who can relate to a nostalgic unrequited love, we hope they wholeheartedly enjoy this website.
+And for those forced by their Byler-crazed friends to explore, it is our wish that you get reeled in by the good music taste, and stay for the emotions that come with it.
+
+### Why choose to love?
+
+Love this project because it is about Byler, has music about Byler, and theories that mention Byler! If you can't tell, this is about BYLER!!!
+
+### Features? Not inclusive of?
+
+It features lore of Byler, their relationship dynamic, music that corresponds with each season, and a form where you can submit your thoughts and rants about how Byler wasn't canon...or maybe there is still hope!
+
+On the other hand, this does not include lore about ANY other characters and strictly focuses on the story of Mike and Will.
+
+### License
+
+Copyright <2026> <2026Foronda&Lee>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “STRANGER THAN FRIENDS WEBSITE”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+### Submitted by Kleo Foronda and Yuna Lee, on the 18th of March 2026, to Sir Roy Canseco, in partial fulfillment of the requirements in CS3 of DOST, PSHS MC.
+
+
+
+
+
+
+
+
+
 # Q3 Proposal Update 
 
-### Final Title : Stranger Than Friends
+### Final Title: Stranger Than Friends
 
 ### Features
 - All-devices friendly :)

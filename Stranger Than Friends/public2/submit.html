@@ -1,39 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Theories <3</title>
-</head>
-<body>
-  <h1>Your Theories!</h1>
-  <h2>The hall of fame for all of your biggest imaginations :)</h2>
-  <div id="show-theories"></div>
+  
+  <link rel="stylesheet" href="../css files/styles.css">
+  <link rel="icon" href="../assets2/other/favicon.ico">
 
   <style>
-    h1{
-      text-align: center;
-      font-family:Consolas, Hack, "Liberation Mono", monospace ;
-      color: rgb(157, 175, 226);
-    }
-
-    h2{
-      font-family: 'Courier New', Courier, monospace;
-    }
-    body{
-      color: rgb(157, 175, 226);
-      background-color: rgb(36, 52, 106);
+    
+    body {
+      color: #d1e272;
+      background-color: #e4e15b;
+      font-family: Consolas, Hack, "Liberation Mono", monospace;
+      margin: 0;
+      padding: 0; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-image: url(../assets2/bgs/we.gif);
+      background-size: auto;
+      background-repeat: repeat;
+      background-position: center;
     }
     
+
+    .content-container {
+      margin-top: 100px; 
+      width: 100%;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #7a92e7;
+      text-shadow: 0 0 10px rgba(157, 175, 226, 0.5);
+    }
+
+    h2 {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 40px;
+      opacity: 0.8;
+    }
+
+    #show-theories {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .theory-card {
+      background: rgba(87, 11, 131, 0.05);
+      border: 2px solid #5241ea;
+      box-shadow: 0 4px 15px rgba(255, 163, 163, 0.5);
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+
+    .theory-header {
+      font-weight: bold;
+      color: #aeafeb;
+      margin-bottom: 10px;
+      display: block;
+      font-size: 1.5rem;
+    }
+
+    .theory-text {
+      line-height: 1.5;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .delete-btn {
+      background: none;
+      border: 1px solid #ff4b2b;
+      color: #ff4b2b;
+      padding: 5px 12px;
+      cursor: pointer;
+      font-family: inherit;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    .delete-btn:hover {
+      background: rgba(255, 75, 43, 0.2);
+    }
   </style>
+</head>
 
+<body>
+
+<header>
+  <div id="header"></div>
   <script>
-    const savedData = JSON.parse(localStorage.getItem('theories')) || [];
-    const container = document.getElementById('show-theories');
-
-    savedData.forEach(item => {
-      const div = document.createElement('div');
-      div.innerHTML = `<strong>${item.name}:</strong> ${item.why}`;
-      container.appendChild(div);
-    });
+    fetch("./handf.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
   </script>
+</header>
+
+<div class="content-container">
+  <h1>Your Theories!</h1>
+  <h2>The hall of fame for all of your biggest imaginations :)</h2>
+
+  <div id="show-theories"></div>
+</div>
+
+<script>
+  const container = document.getElementById('show-theories');
+
+  function displayTheories() {
+    const savedData = JSON.parse(localStorage.getItem('theories')) || [];
+    container.innerHTML = ''; 
+
+    if (savedData.length === 0) {
+      container.innerHTML = '<p style="text-align:center; opacity:0.5;">No theories found yet...</p>';
+      return;
+    }
+
+    savedData.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'theory-card';
+
+      card.innerHTML = `
+        <span class="theory-header">${item.name}</span>
+        <span class="theory-text">${item.why}</span>
+        <div class="btn-container">
+          <button class="delete-btn" onclick="deleteTheory(${index})">Delete</button>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  window.deleteTheory = function(index) {
+    if (confirm("Are you sure you want to delete this theory?")) {
+      const savedData = JSON.parse(localStorage.getItem('theories')) || [];
+      savedData.splice(index, 1); 
+      localStorage.setItem('theories', JSON.stringify(savedData));
+      displayTheories();
+    }
+  };
+
+  displayTheories();
+</script>
+
 </body>
 </html>

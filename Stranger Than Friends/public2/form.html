@@ -1,9 +1,8 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
+<!DOCTYPE html>
+<html>
+<head>
     <link rel="stylesheet" href="../css files/styles.css">
     <link rel="icon" href="../assets2/other/favicon.ico">
-
 
 <script>
 function checkEmpty(field) {
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    
     let savedData = JSON.parse(localStorage.getItem('theories')) || [];
     savedData.push({ name, why });
     localStorage.setItem('theories', JSON.stringify(savedData));
@@ -43,101 +41,100 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-        <style>
-
-        
-
-        
-          body {font-family: Consolas, Hack, "Liberation Mono", monospace;
-          background-color: #000000bb;
-          background-image: url(../assets2/bgs/we.gif);
-          background-size: auto;
-          background-repeat: repeat;
-          background-position: center;
-        }
-        .form{
-          min-height: 100vh;
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        
+<style>
+    body {
+        font-family: Consolas, Hack, "Liberation Mono", monospace;
+        background-color: #000000bb;
+        background-image: url(../assets2/bgs/we.gif);
+        background-size: auto;
+        background-repeat: repeat;
+        background-position: center;
+        margin: 0;
+    }
 
 
+    .form {
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 80px; 
+    }
 
-          form {
-            font-family: Consolas, Hack, "Liberation Mono", monospace;
-            background-color: #a4c9ffb5;
-            width: 80%;
-            max-width: 900px;
-            border-radius: 18px;
-            padding: 60px 70px;
-  
-}
+    form {
+        font-family: Consolas, Hack, "Liberation Mono", monospace;
+        background-color: #a4c9ffb5;
+        width: 80%;
+        max-width: 900px;
+        border-radius: 18px;
+        padding: 60px 70px;
+    }
 
+    fieldset {
+        padding : 20px;
+        color: #232e51; 
+    }
 
-                
-          fieldset {padding : 20px;
-          color: #232e51; }
-
-          input {
-              color: #232e51;
-            }
+    input {
+        color: #232e51;
+    }
           
-          legend {font-weight:bolder}
+    legend {font-weight:bolder}
 
-          textarea:focus {border: 3px solid rgb(115, 208, 157);
-                          background-color: #bbffcf;
-                          outline : none}
+    textarea:focus {
+        border: 3px solid rgb(115, 208, 157);
+        background-color: #bbffcf;
+        outline : none
+    }
         
-          .invalid {border: 3px solid rgb(255, 133, 133);
-                    background-color: #ffb0b0;}
+    .invalid {
+        border: 3px solid rgb(255, 133, 133);
+        background-color: #ffb0b0;
+    }
 
-          input, textarea {
-             width: 100%;
-             padding: 10px;
-             font-family: inherit;
-             font-size: 15px;
-             border: 3px solid #7695fd;
-            background-color: #fffea9;
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        font-family: inherit;
+        font-size: 15px;
+        border: 3px solid #7695fd;
+        background-color: #fffea9;
+    }
+</style>
+</head>
 
-          
+<body>
 
+<header>
+  <div id="header"></div>
+  <script>
+    fetch("./handf.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+</header>
 
-            
-        
-          
-}
-          
-      </style>
-  </head>
-
-  <body>
- <div class="form">
-      <form method="post" action="submit"
-        id = "theory">
-        
-        <fieldset>
-            <legend>What do YOU think really happened?</legend>
-            <label for="name">Your anonymous name:  </label>
-            <input type="text" id="name" name="name" required onblur="checkEmpty(this)"><br>
-            <label for="why">Tell us about your theories! </label><br>
-            <textarea id="why" name="why" rows="5 " cols="67" required  onblur="checkEmpty(this)"></textarea>
-        </fieldset>
+<div class="form">
+  <form method="post" action="submit" id="theory">
+    <fieldset>
+      <legend>What do YOU think really happened?</legend>
+      <label for="name">Your anonymous name:  </label>
+      <input type="text" id="name" name="name" required onblur="checkEmpty(this)"><br>
+      <label for="why">Tell us about your theories! </label><br>
+      <textarea id="why" name="why" rows="5" cols="67" required onblur="checkEmpty(this)"></textarea>
+    </fieldset>
       
-      <input type="submit" value="Submit">
-      <input type="reset" value="Reset">
-    
-      </form>
- </div>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset" onclick="return confirmReset()">
+  </form>
+</div>
 
-
-  <footer> 
+<footer> 
   Click <a href="./foot.html">here</a> to see our references! 
- 
+</footer>
 
-  </footer>
-  </body> 
-  </html>
+</body> 
+</html>

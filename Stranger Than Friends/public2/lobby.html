@@ -1,46 +1,121 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title> Stranger Than Friends</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Than Friends</title>
   <link rel="stylesheet" href="../css files/styles.css">
   <link rel="icon" href="../assets2/other/favicon.ico">
+  
+  <style>
+
+    body {
+      background-color: rgb(0, 0, 0);
+      background-image: url(../assets2/bgs/purple-stars-bg.gif);
+      background-size: auto;
+      background-repeat: repeat;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      overflow:hidden;
+    }
+
+  
+    
+
+    .start > img {
+      display: block;
+      margin: 0 auto;
+      padding-top: 90px;
+      width: clamp(300px, 40vw, 500px);
+    }
+
+    
+.music-btn-home {
+  position: fixed;
+  top: 100px; 
+  z-index: 5;
+  display: block;
+  width: 200px;
+  cursor: pointer;
+  margin-top: 0 !important; 
+}
+
+   
+    .intro-text {
+      height: 30vh; 
+      overflow-y: auto;
+      color: #92d4f2;
+      max-width: 700px;
+      margin: -100px auto 20px auto !important;
+      text-align: justify;
+      line-height: 1.6;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      border: 1px solid #41ead4;
+      
+    }
+
+ 
+  
+    a {
+      color: #41ead4;
+      text-decoration: underline;
+    }
+
+    
+    @media screen and (max-width: 768px) {
+      .music-btn-home, .intro-text {
+        margin-top: 20px !important;
+      }
+      .start > img {
+        width: 80%;
+      }
+    }
+  </style>
 </head>
+
+<body>
+
 <header>
   <div id="header"></div>
-
-<script>
-  fetch("./handf.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
+  <script>
+    fetch("./handf.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
 </header>
 
 <div class="start">
   <img src="../assets2/other/hello.png" alt="hello, adventurer..." class="hello">
 </div>
 
-<body>
-  <div id="musicToggle" class="music-btn">
+<div id="musicToggle" class="music-btn-home">
   <img
     src="../assets2/btns/pause.png"
     data-play="../assets2/btns/playing.png"
     data-pause="../assets2/btns/pause.png"
     alt="Music toggle"
     class="music-icon"
+    style="width: 250px; height: auto;"
   >
-  </div>
+</div>
 
 <audio id="bgMusic" loop preload="auto">
   <source src="../assets2/music/Heroes (2017 Remaster).mp3" type="audio/mpeg">
 </audio>
-  <p> Are you up for an exploration like no other? Introducing...Stranger Than Friends, a Byler haven where all are welcome! <br> Our website plans to share with you the nature of a specific theoretical couple pairing (also known as <a href="https://shipping.fandom.com/wiki/Byler">"Byler"</a>), derived from a TV show titled <a href="https://en.wikipedia.org/wiki/Stranger_Things">"Stranger Things"</a>, through music and all of its elements: melody, lyrics, tempo, and even just first-hand vibes! <br> Not only do we focus on music, but we also connect the melody to fiction, using those musical elements to bring audiences into a better and deeper comprehension of the story.  Whether it be modern music that shares similar sentiments and heartfelt feelings of the characters, or songs that stay true to the show's timeline---hitting fans in their feels of nostalgia or immersion into the fictional universe, we are sure to handpick only the best of the best that will surely keep you hooked for more. We have been long time avid fans of the television show, as well as music geeks, which brought us to the notion to combine our interests into a project idea that would be bound to constantly fuel us with productivity and dedication in completing the project up until our last quarter.</p>
-  <br><br><br> 
-  <p>Go <a href="./form.html">here</a> to enter your theories!</p>
-  <br><br><p>Go <a href="./submit.html">here</a> to see other people's theories!!!</p>
- 
-   
-</body>
+
+<p class="intro-text">
+  Are you up for an exploration like no other? Introducing...Stranger Than Friends, a Byler haven where all are welcome! <br> 
+  Our website plans to share with you the nature of a specific theoretical couple pairing (also known as <a href="https://shipping.fandom.com/wiki/Byler">"Byler"</a>), derived from a TV show titled <a href="https://en.wikipedia.org/wiki/Stranger_Things">"Stranger Things"</a>, through music and all of its elements: melody, lyrics, tempo, and even just first-hand vibes! <br> 
+  Not only do we focus on music, but we also connect the melody to fiction, using those musical elements to bring audiences into a better and deeper comprehension of the story. Whether it be modern music that shares similar sentiments and heartfelt feelings of the characters, or songs that stay true to the show's timeline---hitting fans in their feels of nostalgia or immersion into the fictional universe, we are sure to handpick only the best of the best that will surely keep you hooked for more. We have been long time avid fans of the television show, as well as music geeks, which brought us to the notion to combine our interests into a project idea that would be bound to constantly fuel us with productivity and dedication in completing the project up until our last quarter.
+  <p>
+  Go <a href="./form.html">here</a> to enter your theories!<br>
+  Go <a href="./submit.html">here</a> to see other people's theories!!!
+</p>
 
 <script>
   const music = document.getElementById("bgMusic");
@@ -61,21 +136,5 @@
   });
 </script>
 
-<style>
-    body {
-  
-    background-color: rgb(0, 0, 0);
-    background-image: url(../assets2/bgs/purple-stars-bg.gif);
-    background-size:auto;
-    background-repeat: repeat;
-    background-position: center;
-    }
-
-    
-
-
-</style>
-
-
-
-
+</body>
+</html>

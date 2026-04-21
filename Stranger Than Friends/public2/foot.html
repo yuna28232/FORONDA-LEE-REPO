@@ -1,53 +1,113 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title> Stranger Than Friends</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Than Friends</title>
   <link rel="stylesheet" href="../css files/styles.css">
   <link rel="icon" href="../assets2/other/favicon.ico">
+  
+  <style>
+    
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      font-family: Consolas, Hack, "Liberation Mono", monospace;
+      color: aliceblue;
+      overflow: hidden; 
+    }
+    .references {
+      margin-top: 150px; 
+      text-align: center;
+    }
+
+    .references > img {
+      width: clamp(250px, 40vw, 500px);
+      filter: brightness(1.2);
+      display: block;
+      margin: 0 auto;
+    }
+
+   
+    .ref-box {
+      margin-top: 30px; 
+      width: 80%;
+      background: rgba(20, 20, 20, 0.8);
+      border: 1px solid #41ead4;
+      border-radius: 12px;
+      overflow-y: auto; 
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    .ref-box::-webkit-scrollbar {
+      width: 8px;
+    }
+    .ref-box::-webkit-scrollbar-thumb {
+      background: #41ead4;
+      border-radius: 10px;
+    }
+
+    .ref-box a {
+      color: #41ead4;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+
+ 
+    .closing-text {
+      margin-top: 25px; 
+      font-style: italic;
+      color: #92d4f2;
+      text-align: center;
+      max-width: 80%;
+    }
+
+  
+    @media screen and (max-width: 768px) {
+      .references {
+        margin-top: 100px; 
+      .ref-box {
+        width: 90%;
+        height: 180px;
+      }
+    }
+  </style>
 </head>
+
+<body>
+
 <header>
   <div id="header"></div>
-
-<script>
-  fetch("./handf.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
+  <script>
+    fetch("./handf.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
 </header>
 
 <div class="references">
   <img src="../assets2/other/blinkiesCafe-c8.gif" alt="references">
 </div>
 
-<body>
-  <p>
-    (1) Wiki, C. T. S. (n.d.). Byler. Shipping Wiki. <a href="https://shipping.fandom.com/wiki/Byler">https://shipping.fandom.com/wiki/Byler</a></br>
-    (2) Wikipedia contributors. (2025, December 14). Stranger Things. Wikipedia. </br><a href = "https://en.wikipedia.org/wiki/Stranger_Things">https://en.wikipedia.org/wiki/Stranger_Things</a></br>
-    (3) W3Schools.com. (n.d.-a). <a href= "https://www.w3schools.com/html/">https://www.w3schools.com/html/</a></br>
-    (4) W3Schools.com. (n.d.-b).<a href= "https://www.w3schools.com/css/default.asp">https://www.w3schools.com/css/default.asp</a><br>
-    <br> Though the show has come to a close, never let your love for the characters and the story EVER die. We thank you for visiting our website. 
-    <br><br> Over and out.
-    </p>
+<div class="ref-box">
+  (1) Wiki, C. T. S. (n.d.). Byler. Shipping Wiki. <a href="https://shipping.fandom.com/wiki/Byler">https://shipping.fandom.com/wiki/Byler</a><br><br>
+  (2) Wikipedia contributors. (2025, December 14). Stranger Things. Wikipedia. <a href="https://en.wikipedia.org/wiki/Stranger_Things">https://en.wikipedia.org/wiki/Stranger_Things</a><br><br>
+  (3) W3Schools.com. (n.d.-a). <a href="https://www.w3schools.com/html/">https://www.w3schools.com/html/</a><br><br>
+  (4) W3Schools.com. (n.d.-b). <a href="https://www.w3schools.com/css/default.asp">https://www.w3schools.com/css/default.asp</a>
+</div>
+
+<div class="closing-text">
+  Though the show has come to a close, never let your love for the characters and the story EVER die. We thank you for visiting our website. <br><br>
+  <strong>Over and out.</strong>
+</div>
+
 </body>
-
-
-<style>
-    body {
-    background-color: black;
-    }
-
-    body>p{
-      padding-left: 100px;
-      padding-right: 100px;
-      padding-top: 500px;
-    }
-    .references > img {
-  width: 500px;
- padding-top: 150px;
-  padding-left: 500px;
-  padding-right: 200px;
-  filter: brightness(1.2);
-}
-
-</style>
+</html>

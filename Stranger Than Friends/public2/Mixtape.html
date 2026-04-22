@@ -1,120 +1,138 @@
 <!DOCTYPE html>
 <head>
-  <title> Stranger Than Friends</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Than Friends</title>
   <link rel="stylesheet" href="../css files/styles.css">
   <link rel="icon" href="../assets2/other/favicon.ico">
-</head>
-<header>
-<div id="header"></div>
+  
+  <style>
 
-<script>
-  fetch("handf.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
-</header>
+    body {
+        background-color: rgba(27, 33, 84, 1);
+        background-image: url(../assets2/bgs/Hahe.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        min-height: 100vh;
+    }
+
+
+    .hii {
+        display: block;
+        margin: 0 auto;
+        padding-top: 60px;
+        width: 90%;          
+        max-width: 800px;    
+        filter: brightness(0.9);
+        transform: translateY(20px);
+    }
+
+    .choose-container {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        margin: 60px auto;
+        max-width: 1400px;
+        padding: 0 20px;
+    }
+
+
+    .character-card {
+        flex: 1;
+        min-width: 320px; 
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .icon-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.2s ease, filter 0.2s ease;
+        cursor: pointer;
+    }
+
+    .icon-will {
+        filter: grayscale(0.3);
+    }
+    .icon-will:hover {
+        transform: scale(1.02);      
+        filter: grayscale(50%) sepia(70%) saturate(120%) brightness(80%);
+    }
+
+    .icon-mike {
+        filter: brightness(1.067);
+    }
+    .icon-mike:hover {
+        transform: scale(1.02);      
+        filter: grayscale(20%) sepia(50%) saturate(120%) brightness(80%);
+    }
+    .desc {
+        font-size: small;
+        margin-top: 15px;
+        max-width: 300px;
+        line-height: 1.4;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hii {
+            padding-top: 120px;
+        }
+        .choose-container {
+            margin-top: 20px;
+            gap: 50px; 
+        }
+        .desc {
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+    }
+  </style>
+</head>
 
 <body>
-  <img src="../assets2/other/blinkiesCafe-Io.gif" class="hii">
 
-  <div class = "choose">
-     <a href="./will.html"><img src="../assets2/btns/will.png" class="icon-will" ></a>
-    <a href="./mike.html"><img src="../assets2/btns/mike.png" class="icon-mike" ></a>
+<header>
+  <div id="header"></div>
+  <script>
+    fetch("handf.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+  </script>
+</header>
+
+<img src="../assets2/other/blinkiesCafe-Io.gif" class="hii" alt="Welcome">
+
+<div class="choose-container">
+  
+  <div class="character-card">
+    <a href="./will.html">
+        <img src="../assets2/btns/will.png" class="icon-img icon-will" alt="Will">
+    </a>
+    <p class="desc">my paintings speak thousands of words that I could never say to you</p>
   </div>
 
-  <p class="will-desc">my paintings speak thousands of words that I could never say to you</p>
-  <p class="mike-desc">i write to remember you, hoping that you’ll never stop needing me</p>
+  <div class="character-card">
+    <a href="./mike.html">
+        <img src="../assets2/btns/mike.png" class="icon-img icon-mike" alt="Mike">
+    </a>
+    <p class="desc">i write to remember you, hoping that you’ll never stop needing me</p>
+  </div>
+
+</div>
 
 </body>
-
-
-<style>
-
-body>.hii {
-  transform: translateY(20px);
-
-}
-
-body>.choose {
-  transform: translateY(50px);
-
-}
-
-body>.will-desc {
-  transform: translateY(50px);
-
-}
-
-body>.mike-desc {
-  transform: translateY(33px);
-
-}
-
-p{
-  font-size: small;
-}
-  .will-desc {
-    margin-left: 155px;
-    transform: translateY(-38px);
-  }
-
-  .mike-desc {
-    margin-left: 775px;
-    transform: translateY(-38px);
-  }
-
-body {
-    background-color: rgba(27, 33, 84, 1);
-    background-image: url(../assets2/bgs/Hahe.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-}
-
-body>img{
-  padding-top: 120px;
-  display: block;
-  margin:  auto;
-  width: 800px;
-  filter: brightness(0.9);
-}
-
-.icon-will {
-  filter: grayscale(0.3);
-  display: block;
-  margin-top: -50px;
-  width: 845px;
-  transition: 
-    transform 0.2s ease,
-    filter 0.2s ease;
-  padding: 0px;
-  border: none;
-}
-
-.icon-mike {
-  filter: brightness(1.067);
-  display: block;
-  margin-left: 640px;
-  margin-top: -460px;
-  width: 775px;
-  transition: 
-    transform 0.2s ease,
-    filter 0.2s ease;
-  padding: 0px;
-  border: none;
-}
-
-.icon-will:hover {
-    transform: scale(1.02);      
-  filter: grayscale(50%) sepia(70%) saturate(120%) brightness(80%);
-}
-
-.icon-mike:hover {
-    transform: scale(1.02);      
-  filter: grayscale(20%) sepia(50%) saturate(120%) brightness(80%);
-}
-
-</style>
+</html>

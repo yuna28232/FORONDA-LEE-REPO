@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stranger Than Friends</title>
   <script src="../js-files/mike-musicplayer.js" defer></script>
   <link rel="icon" href="../assets2/other/favicon.ico">
@@ -38,7 +39,6 @@
 <button onclick="switchPlaylist('playlist2')">Modern</button>
 </div>
 
-    <!-- JS WILL INSERT SONGS HERE -->
     <div class="song-list" id="songList"></div>
   </div>
 </div>
@@ -47,147 +47,147 @@
 </body>
 
 <style>
-    body {
-      background-color: rgb(52, 27, 5);
-    background-image: url(../assets2/bgs/mikebasement.png);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center ;
-    }
 
-    /* ===== PLAYER CONTAINER ===== */
+body {
+    background-color: rgb(52, 27, 5);
+    background-image: url(../assets2/bgs/mikebasement.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+.audio-player {
+    font-family: 'Courier New', Courier, monospace;
+    position: fixed;
+    bottom: 20px; 
+    right: 0;
+    width: 50px;
+    height: 450px;
+    background: linear-gradient(180deg, rgba(106, 191, 255, 0.95), rgba(29, 84, 202, 0.95));
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: rgb(192, 214, 255);
+    z-index: 99999;
+    border-radius: 15px 0 0 15px;
+}
+
+.audio-player.open {
+    width: 90vw; 
+}
+
+
+@media screen and (min-width: 1024px) {
     .audio-player {
-      font-family: 'Courier New', Courier, monospace;
-      position: fixed;
-      top: 450px; 
-      right: 0;
-      transform: translateY(-50%);
-      width: 50px;
-      height: 500px;
-      background: linear-gradient(
-        180deg,
-        rgba(106, 191, 255, 0.95),
-        rgba(29, 84, 202, 0.95)
-      );
-      overflow: hidden;
-      transition: width 0.3s ease;
-      color: rgb(192, 214, 255);
-      z-index: 9999;
+  
+        bottom: auto;
+        top: 450px;
+        transform: translateY(-50%);
+        height: 500px;
+        z-index: 99999;
     }
 
     .audio-player.open {
-      width: 320px;
+        width: 320px; 
+        z-index: 99999;
     }
+}
 
-    /* ===== TOGGLE ===== */
-    .toggle {
-      width: 50px;
-      height: 50px;
-      border: none;
-      background: none;
-      color: rgb(255, 255, 255);
-      font-size: 22px;
-      cursor: pointer;
-    }
+.toggle {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
 
-  .player-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 12px;
-  gap: 6px;
-
-  opacity: 0;
-  pointer-events: none;
-
-  transition: opacity 0.25s ease;
+.player-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 12px;
+    gap: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
 }
 
 .audio-player.open .player-content {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
+audio {
+    width: 100%;
+}
 
+.song-list {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 70px;
+}
 
-    audio {
-      width: 100%;
-    }
+.song-btn {
+    font-family: "Liberation Mono", monospace;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(126, 178, 246, 0.405);
+    border: none;
+    color: rgb(192, 214, 255);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
-    .song-list {
-      flex: 1;
-      min-height: 0;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding-bottom: 70px;
-    }
+.song-btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
 
-    .song-btn {
-      font-family: "Liberation Mono", monospace;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      background: rgba(126, 178, 246, 0.405);
-      border: none;
-      color: rgb(192, 214, 255);
-      padding: 8px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .song-btn img {
-      width: 50px;
-      height: 50px;
-      border-radius: 6px;
-    }
-
-    .playlist-switch button {
-  background: rgb(92, 150, 251); 
-  border: none;
-  color: rgb(192, 214, 255);
-  font-family: "Liberation Mono", monospace;
-  padding: 7px;
-  font-size: 12px;
-  font-weight: 500;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
+.playlist-switch button {
+    background: rgb(92, 150, 251); 
+    border: none;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 999px;
+    cursor: pointer;
 }
 
 .popup-text {
-  top: 180px;
-  bottom: 180px;
-  position: fixed;
-  inset: 0;              
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-
-  z-index: 2147483647;   
-  pointer-events: none;  
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 10000;
+    pointer-events: none;
 }
 
 .popup-text.active {
-  display: flex;
+    display: flex;
 }
 
-.popup-text > div {
-  max-width: 500px;
-  background: rgba(0,0,0,0.55);
-  color: white;
-  padding: 20px;
-  border-radius: 16px;
-  line-height: 1.6;
-  text-align: justify;
+.popup-inner {
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.352);
+    color: white;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
 }
-
-
-
-
-  </style>
+</style>
 
 
 
